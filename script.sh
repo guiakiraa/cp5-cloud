@@ -1,11 +1,5 @@
 #!/bin/bash
 
-az provider register --namespace Microsoft.Web
-az provider register --namespace Microsoft.Insights
-az provider register --namespace Microsoft.OperationalInsights
-az provider register --namespace Microsoft.ServiceLinker
-az provider register --namespace Microsoft.Sql
-
 export RESOURCE_GROUP_NAME="rg-dimdim"
 export WEBAPP_NAME="dimdim-app"
 export APP_SERVICE_PLAN="planDimdim"
