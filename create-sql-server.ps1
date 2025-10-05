@@ -1,3 +1,9 @@
+az provider register --namespace Microsoft.Web
+az provider register --namespace Microsoft.Insights
+az provider register --namespace Microsoft.OperationalInsights
+az provider register --namespace Microsoft.ServiceLinker
+az provider register --namespace Microsoft.Sql
+
 $RG = "rg-dimdim"
 $LOCATION = "brazilsouth"
 $SERVER_NAME = "sqlserver-dimdim"
