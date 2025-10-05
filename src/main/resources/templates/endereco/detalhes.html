@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Detalhes do Endereço</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-4">
+    <div th:replace="~{fragmentos :: menu}" />
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="h3 mb-0">Detalhes do Endereço</h1>
+        <div class="d-flex gap-2">
+            <a th:href="@{'/enderecos/editar/' + ${endereco.id}}" class="btn btn-warning">Editar</a>
+            <a href="/enderecos" class="btn btn-outline-secondary">Voltar</a>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h5>Informações do Endereço</h5>
+            <table class="table table-borderless">
+                <tr>
+                    <td><strong>ID:</strong></td>
+                    <td th:text="${endereco.id}"></td>
+                </tr>
+                <tr>
+                    <td><strong>Logradouro:</strong></td>
+                    <td th:text="${endereco.logradouro}"></td>
+                </tr>
+                <tr>
+                    <td><strong>Número:</strong></td>
+                    <td th:text="${endereco.numero}"></td>
+                </tr>
+                <tr>
+                    <td><strong>Bairro:</strong></td>
+                    <td th:text="${endereco.bairro}"></td>
+                </tr>
+                <tr>
+                    <td><strong>Cidade:</strong></td>
+                    <td th:text="${endereco.cidade}"></td>
+                </tr>
+                <tr>
+                    <td><strong>Estado:</strong></td>
+                    <td th:text="${endereco.estado}"></td>
+                </tr>
+                <tr>
+                    <td><strong>CEP:</strong></td>
+                    <td th:text="${endereco.cep}"></td>
+                </tr>
+                <tr th:if="${endereco.complemento != null and !endereco.complemento.isEmpty()}">
+                    <td><strong>Complemento:</strong></td>
+                    <td th:text="${endereco.complemento}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
